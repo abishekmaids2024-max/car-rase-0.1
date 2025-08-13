@@ -1,0 +1,48 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Central Perk Dash</title>
+  <link rel="icon" href="favicon.png" type="image/png">
+  <link rel="manifest" href="manifest.json">
+  <meta name="theme-color" content="#111111"/>
+  <style>
+    @font-face {
+      font-family: 'Marker';
+      src: local('Arial');
+    }
+  </style>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div id="ui">
+    <div class="title">CENTRAL<span class="dots"> • </span>PERK<span class="dots"> • </span>DASH</div>
+    <div class="hud">
+      <div>Score: <span id="score">0</span></div>
+      <div>Coffee: <span id="coffee">0</span></div>
+      <div>Lives: <span id="lives">3</span></div>
+    </div>
+    <div id="controls">
+      <button id="btn-left" aria-label="move left">⬅</button>
+      <button id="btn-right" aria-label="move right">➡</button>
+      <button id="btn-pause" aria-label="pause">⏸</button>
+    </div>
+  </div>
+  <canvas id="game" width="420" height="720" aria-label="game canvas"></canvas>
+
+  <div class="footer">
+    <span>Made for fans. Not affiliated with any show owners.</span>
+    <span>Install as PWA from your browser menu.</span>
+  </div>
+
+  <script>
+    if ("serviceWorker" in navigator) {
+      window.addEventListener("load", () => {
+        navigator.serviceWorker.register("service-worker.js");
+      });
+    }
+  </script>
+  <script src="game.js"></script>
+</body>
+</html>

@@ -1,0 +1,75 @@
+:root {
+  --bg: #0d0d0d;
+  --panel: #141414;
+  --accent: #ffd166;
+  --text: #f5f5f5;
+  --muted: #9aa0a6;
+}
+* { box-sizing: border-box; }
+html, body { height: 100%; margin: 0; }
+body {
+  font-family: system-ui, -apple-system, Segoe UI, Roboto, Ubuntu, Cantarell, Noto Sans, Arial, "Apple Color Emoji", "Segoe UI Emoji";
+  background: radial-gradient(circle at 50% -20%, #222 0%, #111 60%, #0a0a0a 100%);
+  color: var(--text);
+  display: grid;
+  grid-template-rows: auto 1fr auto;
+  place-items: center;
+  padding: 16px;
+}
+#ui {
+  width: 420px;
+  max-width: 98vw;
+}
+.title {
+  text-align: center;
+  font-weight: 800;
+  letter-spacing: 2px;
+  font-size: 28px;
+  margin-bottom: 8px;
+}
+.title .dots { color: #ff3b30; margin: 0 6px; }
+.hud {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: var(--panel);
+  padding: 10px 12px;
+  border-radius: 16px;
+  box-shadow: 0 6px 18px rgba(0,0,0,0.4);
+  margin-bottom: 10px;
+}
+#controls {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 8px;
+  margin-top: 8px;
+}
+#controls button {
+  font-size: 20px;
+  background: #1f1f1f;
+  color: var(--text);
+  border: 1px solid #333;
+  border-radius: 14px;
+  padding: 10px 12px;
+  cursor: pointer;
+}
+#controls button:active { transform: scale(0.98); }
+canvas#game {
+  width: 420px; height: 720px; max-width: 98vw; max-height: 85vh;
+  background: linear-gradient(#222,#111);
+  border-radius: 18px;
+  box-shadow: 0 12px 28px rgba(0,0,0,0.5);
+  outline: 2px solid #2a2a2a;
+}
+.footer {
+  margin-top: 10px;
+  font-size: 12px;
+  color: var(--muted);
+  display:flex;
+  gap: 10px;
+}
+@media (max-width: 480px) {
+  .title { font-size: 22px; }
+  .hud { font-size: 14px; }
+  #controls button { font-size: 18px; }
+}
